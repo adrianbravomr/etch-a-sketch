@@ -43,9 +43,11 @@ let removeGrid = function(){
 
 
 let paintItem = function(e){
-    let index = e.path[0].dataset.col;
-    let item = document.querySelector(`[data-col="${index}"]`);
-    if (isPainting){
+    if(e.buttons > 0){
+        //console.log(e);
+        let index = e.fromElement.attributes[1].value;
+        let item = document.querySelector(`[data-col="${index}"]`);
+        isPainting = true;
         if(eraseMode){
             item.classList.remove('painted');
             sketchs[sketchNum][index-1]=false;
@@ -55,8 +57,9 @@ let paintItem = function(e){
             sketchs[sketchNum][index-1]=true;
         }
     }
-    else {
-    };
+    else{
+        isPainting = false;
+    }
 }
 
 let switchSketch = function(){
@@ -92,15 +95,6 @@ let paintSketch = function(index){
 
 
 let init = function(){
-
-    window.addEventListener('mousedown',(e) => {
-        isPainting = true;
-    });
-    window.addEventListener('mouseup',(e) => {
-        isPainting = false;
-    });
-
-
     let switchButton = document.querySelector('#switch_button');
     switchButton.addEventListener('click',(e) => {
         audio.currentTime = 0;
@@ -151,9 +145,9 @@ let newSketch = function(){
     createGrid(gridColumns,gridRows);
 
     let gridItems = document.querySelectorAll('.grid-item');
-    gridItems.forEach(e => {
-        e.addEventListener('mouseover',(e) => {
-            paintItem(e)
+    gridItems.forEach(item => {
+        item.addEventListener('mouseover',(event) => {
+            paintItem(event)
         });
     })
 
