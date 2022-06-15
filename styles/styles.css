@@ -1,0 +1,79 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: rgb(158, 158, 158);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.sketchpad{
+    display: flex;
+    flex-direction: column;
+    max-width: 220px;
+    align-items: center;
+    background-color: rgb(220, 0, 0);
+    border-radius: 20px;
+    border: 2px solid darkred;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.468), inset 0px -2px 7px 3px rgb(75, 0, 0, 0.5);
+
+}
+
+.sketchpad_title{
+    margin: 5px;
+    color: rgb(240, 212, 0);
+}
+
+.grid-container{
+    display: grid;
+    width: 190px;
+    height: 190px;
+    gap: 0px;
+    background-color: rgb(160, 186, 160);
+    border: 2px solid rgb(77, 77, 77);
+    border-radius: 5px;
+    box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.758), 0px 0px 5px 4px rgba(255, 255, 255, 0.358);
+}
+
+.grid-item{
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+}
+
+.painted{
+    background-color: rgb(0, 50, 0);
+}
+
+
+.sketchpad_bottom{
+    display: flex;
+    width: 220px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    height: 50px;
+}
+
+button{
+    cursor: pointer;
+    font-size: 8px;
+    font-weight: 600;
+    text-align: center;
+    height: 40px;
+    width: 40px;
+    color: rgb(91, 91, 91);
+    border-radius: 50px;
+    box-shadow: 0px 0px 3px rgb(0, 0, 0);
+}
+
+.button_active{
+    background-color: yellow;
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etch-A-Sketch</title>
+    <script src="scripts/scripts.js" defer></script>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+</head>
+<body>
+    <audio id="buttonClick">
+        <source src="sounds/beep.wav" type="audio/wav">
+    </audio>
+    <div class="container">
+        <div class="sketchpad animate__animated animate__fadeInUp">
+            <h2 class="sketchpad_title">Etch-A-Sketch</h2>
+            <div class="grid-container"></div>
+            <div class="sketchpad_bottom"><button id="eraser_button">Eraser</button><button id="new_button">New</button><button id="switch_button">Switch</button></div>
+        </div>
+    </div>
+</body>
+</html>
